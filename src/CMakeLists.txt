@@ -11,7 +11,7 @@ set(HEADERS
 ../include/gram_savitzky_golay/spatial_filters.h
 )
 
-add_library(gram_savitzky_golay SHARED ${SRC} ${HEADERS})
+add_library(gram_savitzky_golay STATIC ${SRC} ${HEADERS})
 set_target_properties(gram_savitzky_golay PROPERTIES COMPILE_FLAGS "-DGRAM_SAVITZKY_GOLAY_EXPORTS")
 target_include_directories(gram_savitzky_golay PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include> $<INSTALL_INTERFACE:include>)
 if(TARGET Eigen3::Eigen)
